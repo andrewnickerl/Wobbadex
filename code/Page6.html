@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Pokemon Index</title>
+        <style type="text/css">
+            body{
+                text-align: left;
+                background-color: lightgrey;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1> Pokemon Index List </h1>
+        <h4>
+            <label>
+                Search Pokemon: <input type="search" name="Search">
+            </label>
+            <label for="generation">
+                Choose Generation: 
+                    <select id="generation">
+                        <option value="null"></option>
+                        <option value="gen1">1</option>
+                        <option value="gen2">2</option>
+                        <option value="gen3">3</option>
+                        <option value="gen4">4</option>
+                        <option value="gen5">5</option>
+                        <option value="gen6">6</option>
+                        <option value="gen7">7</option>
+                        <option value="gen8">8</option>
+                    </select>  
+            <input type="submit" value="Search">  
+        </h4>
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-sm table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>Name</th>
+                            <th>Generation</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var r in Model)
+                        {
+                            <tr>
+                                <tb>r.Number</tb>
+                                <tb>r.Name</tb>
+                                <tb>r.Generation</tb>
+                                <tb>r.Type</tb>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
