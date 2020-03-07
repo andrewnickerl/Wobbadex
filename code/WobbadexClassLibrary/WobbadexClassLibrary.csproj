@@ -120,7 +120,6 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Categories.cs" />
     <Compile Include="Enumerations.cs" />
     <Compile Include="Move.cs" />
     <Compile Include="Pokemon.cs" />
