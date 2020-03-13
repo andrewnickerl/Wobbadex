@@ -10,7 +10,8 @@ namespace WobbadexClassLibrary
     public class Pokemon
     {
         public string Name { get; set; }
-        public Types Types { get; set; }
+        public Types Type1 { get; set; }
+        public Types Type2 { get; set; }
         public List<string> Abilities { get; set; }
         public List<Pokemon> Evolutions { get; set; }
         public int Hp { get; set; }
