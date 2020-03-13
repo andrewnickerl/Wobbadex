@@ -15,15 +15,12 @@ namespace WobbadexClassLibrary
             switch(type)
             {
                 case TypeNames.Bug:
-                    VsFire = .5;
-                    VsGrass = 2;
                     VsFighting = .5;
-                    VsPoison = .5;
-                    VsFlying = .5;
-                    VsPsychic = 2;
-                    VsGhost = .5;
-                    VsDark = 2;
-                    VsSteel = .5;
+                    VsFlying = 2;
+                    VsGround = .5;
+                    VsRock = 2;
+                    VsFire = 2;
+                    VsGrass = .5;
                     break;
                 case TypeNames.Dark:
                     break;
@@ -63,23 +60,23 @@ namespace WobbadexClassLibrary
                 
         }
         public TypeNames Type { get; set; }
-        public double? VsBug { get; set; } = 1;
-        public double? VsDark { get; set; } = 1;
-        public double? VsDragon { get; set; } = 1;
-        public double? VsElectric { get; set; } = 1;
-        public double? VsFairy { get; set; } = 1;
-        public double? VsFighting { get; set; } = 1;
-        public double? VsFire { get; set; } = 1;
-        public double? VsFlying { get; set; } = 1;
-        public double? VsGhost { get; set; } = 1;
-        public double? VsGrass { get; set; } = 1;
-        public double? VsGround { get; set; } = 1;
-        public double? VsIce { get; set; } = 1;
-        public double? VsNormal { get; set; } = 1;
-        public double? VsPoison { get; set; } = 1;
-        public double? VsPsychic { get; set; } = 1;
-        public double? VsRock { get; set; } = 1;
-        public double? VsSteel { get; set; } = 1;
-        public double? VsWater { get; set; } = 1;
+        public double VsBug { get; set; } = 1;
+        public double VsDark { get; set; } = 1;
+        public double VsDragon { get; set; } = 1;
+        public double VsElectric { get; set; } = 1;
+        public double VsFairy { get; set; } = 1;
+        public double VsFighting { get; set; } = 1;
+        public double VsFire { get; set; } = 1;
+        public double VsFlying { get; set; } = 1;
+        public double VsGhost { get; set; } = 1;
+        public double VsGrass { get; set; } = 1;
+        public double VsGround { get; set; } = 1;
+        public double VsIce { get; set; } = 1;
+        public double VsNormal { get; set; } = 1;
+        public double VsPoison { get; set; } = 1;
+        public double VsPsychic { get; set; } = 1;
+        public double VsRock { get; set; } = 1;
+        public double VsSteel { get; set; } = 1;
+        public double VsWater { get; set; } = 1;
     }
 }
