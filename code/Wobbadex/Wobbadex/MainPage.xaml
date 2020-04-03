@@ -7,8 +7,5 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <Grid>
-        <Image x:Name="image" HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="100" Source="Assets/wobbafet.png"/>
-    </Grid>
+    <Image Source="/Assets/Wobbadex.png"  x:Name="image" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
 </Page>

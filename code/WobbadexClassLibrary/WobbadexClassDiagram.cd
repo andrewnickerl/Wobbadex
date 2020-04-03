@@ -3,7 +3,7 @@
   <Class Name="WobbadexClassLibrary.Pokemon">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAQAAAAAAAAQAAAAAAAQBAIEAAQAQAAAAAggAQAA=</HashCode>
+      <HashCode>AAAAAUAAAAAAAAQAAAAgAAQBAIEAAQAQAAAAAggAQAA=</HashCode>
       <FileName>Pokemon.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -20,12 +20,12 @@
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Enum Name="WobbadexClassLibrary.Enumerations.TypeNames">
+      <Enum Name="WobbadexClassLibrary.Enumerations.TypeNames" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>Enumerations.cs</NewMemberFileName>
         </TypeIdentifier>
       </Enum>
-      <Enum Name="WobbadexClassLibrary.Enumerations.Categories">
+      <Enum Name="WobbadexClassLibrary.Enumerations.Categories" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>Enumerations.cs</NewMemberFileName>
         </TypeIdentifier>
