@@ -7,5 +7,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Image Source="/Assets/Wobbadex.png"  x:Name="image" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="/Assets/Wobbadex.png" AlignmentX="Center" AlignmentY="Top"/>
+        </Grid.Background>
+        <TextBlock x:Name="username" HorizontalAlignment="Left" Margin="272,670,0,0" Text="Username:" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="139" RenderTransformOrigin="-0.729,2.177"/>
+        <TextBox x:Name="pwBox" HorizontalAlignment="Left" Margin="355,664,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="139"/>
+        <TextBlock x:Name="password" HorizontalAlignment="Left" Margin="272,715,0,0" Text="Password:" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="139" RenderTransformOrigin="-0.729,2.177"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="355,707,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.608,-1.482" Height="34" Width="139"/>
+        <Button x:Name="button" Content="Login" Margin="528,664,0,0" VerticalAlignment="Top" Height="34" Width="80" />
+        <HyperlinkButton Content="Create new account" Margin="261,746,0,0" VerticalAlignment="Top" Height="45" Width="135"/>
+    </Grid>
 </Page>
