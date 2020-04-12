@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using WobbadexClassLibrary;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,6 +26,11 @@ namespace Wobbadex
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void ButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(PokemonPage), null);
         }
     }
 }
