@@ -28,7 +28,7 @@ namespace Wobbadex
     {
         //Connection string using Window Authentication
         private string connectionString =
-        @"Server = DESKTOP-QA4COAS\SQLEXPRESS; Database = Wobbadex; Trusted_Connection = True";
+        @"Server = DESKTOP-PKJ7J5G\SQLEXPRESS; Database = Wobbadex; Trusted_Connection = True";
 
         public string ConnectionString { get => connectionString; set => connectionString = value; }
 
