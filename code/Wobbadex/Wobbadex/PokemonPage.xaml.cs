@@ -80,7 +80,27 @@ namespace Wobbadex
                     this.whereClause = $"WHERE type1 like \'{searchTextBox.Text}\' or type2 like \'{searchTextBox.Text}\'";
                     break;
                 case "is_legendary":
-                    this.whereClause = $"WHERE {this.searchParameter} like \'{searchTextBox.Text}\'";
+                    if(searchTextBox.Text == "1" || searchTextBox.Text == "0")
+                    {
+                        this.whereClause = $"WHERE {this.searchParameter} like \'{searchTextBox.Text}\'";
+                    }
+                    else switch (searchTextBox.Text.ToLower())
+                    {
+                        case "yes":
+                            this.whereClause = $"WHERE {this.searchParameter} like \'1\'";
+                            break;
+                        case "no":
+                            this.whereClause = $"WHERE {this.searchParameter} like \'0\'";
+                            break;
+                        case "true":
+                            this.whereClause = $"WHERE {this.searchParameter} like \'1\'";
+                            break;
+                        case "false":
+                            this.whereClause = $"WHERE {this.searchParameter} like \'0\'";
+                            break;
+                        default:
+                            break;
+                    }                    
                     break;
                 default:
                     break;
@@ -101,7 +121,6 @@ namespace Wobbadex
             {
                 pokemonCollection.Add(row.ItemArray);
             }
-
             PokemonGrid.ItemsSource = pokemonCollection;
         }
 
@@ -117,7 +136,7 @@ namespace Wobbadex
                 using (var dataAdapter = new SqlDataAdapter(command))
                 {
                     dataAdapter.Fill(pokemonTable);
-                }
+                }                
                 return pokemonTable;
             }
         }        
