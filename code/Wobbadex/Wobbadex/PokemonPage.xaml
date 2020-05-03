@@ -9,10 +9,34 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="{ThemeResource SystemControlAcrylicWindowBrush}">
-        <RelativePanel>
-            <controls:DataGrid x:Name="PokemonGrid"
-                Height="600" Margin="12"
-                AutoGenerateColumns="False" />
+        <RelativePanel Padding="20">            
+            <TextBlock Name="searchTextBlock" Text="Search:" Width="75" Height="40"                       
+                TextAlignment="Center" Padding="10"/>
+            <TextBox Name="searchTextBox" Width="500" Height="40" Padding="6"
+                PlaceholderText="Enter your search here"
+                BorderBrush="Blue" BorderThickness="3"                
+                RelativePanel.RightOf="searchTextBlock"/>
+            <DropDownButton Name="searchDropDown" Width="150" Height="40"
+                Background="Blue" Foreground="Yellow" 
+                BorderBrush="Yellow" BorderThickness="4" 
+                Content="Search Type"
+                RelativePanel.RightOf="searchTextBox">
+                <Button.Flyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem Tag="pokemon_name" Text="Name" Click="SearchParameter_Click"/>
+                        <MenuFlyoutItem Tag="pokedex_number" Text="Pokedex Number" Click="SearchParameter_Click"/>
+                        <MenuFlyoutItem Tag="type" Text="Type" Click="SearchParameter_Click"/>
+                        <MenuFlyoutItem Tag="is_legendary" Text="Legendary" Click="SearchParameter_Click"/>                      
+                    </MenuFlyout>
+                </Button.Flyout>                    
+             </DropDownButton>
+            <Button Name="runSearch" Content="Search" Width="75" Height="40" Background="Yellow"
+                Foreground="Blue" BorderBrush="Blue" BorderThickness="2"
+                RelativePanel.RightOf="searchDropDown" Click="RunSearch_Click"/>
+            <controls:DataGrid x:Name="PokemonGrid"                
+                Height="800"
+                AutoGenerateColumns="False" 
+                RelativePanel.Below="searchTextBox"/>
         </RelativePanel>
     </Grid>
 </Page>
