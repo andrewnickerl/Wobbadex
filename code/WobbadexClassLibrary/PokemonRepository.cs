@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace WobbadexClassLibrary
 {
-    class PokemonRepository
+    public class PokemonRepository
     {
         public readonly ObservableCollection<Pokemon> pokemonRepository;
         //Connection string using Window Authentication
