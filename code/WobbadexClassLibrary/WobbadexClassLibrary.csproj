@@ -126,6 +126,8 @@
     <Compile Include="PokemonRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types.cs" />
+    <Compile Include="UserRepository.cs" />
+    <Compile Include="WobbaUser.cs" />
     <EmbeddedResource Include="Properties\WobbadexClassLibrary.rd.xml" />
   </ItemGroup>
   <ItemGroup>
