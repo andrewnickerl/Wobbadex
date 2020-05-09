@@ -13,6 +13,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.System;
+using Windows.UI;
+using System.Text;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -28,9 +31,50 @@ namespace Wobbadex
             this.InitializeComponent();
         }
 
-        private void ButtonClick(object sender, RoutedEventArgs e)
+        private void Login(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(PokemonPage), null);
+            UserRepository userRepository = new UserRepository();
+            if(userRepository.GetRepo().Exists(u => u.UserName == $"{usernameBox.Text}"))
+            {    
+                WobbaUser user = userRepository.GetRepo()
+                    .Find(u => u.UserName == $"{usernameBox.Text}");
+
+                if (user.PwHash == ToHash(pwBox.Password))
+                {
+                    this.Frame.Navigate(typeof(PokemonPage), null);
+                }
+                else
+                {
+                    SolidColorBrush redBrush = new SolidColorBrush(Colors.Red);
+                    statusText.Foreground = redBrush;
+
+                    statusText.Text = "Invalid credentials. " +
+                        "Please try again or create a new account.";
+                    pwBox.Password = "";
+                }
+            }
+            else
+            {
+                SolidColorBrush redBrush = new SolidColorBrush(Colors.Red);
+                statusText.Foreground = redBrush;
+
+                statusText.Text = "Invalid credentials. " +
+                    "Please try again or create a new account.";
+                pwBox.Password = "";
+            }
+                     
         }
+
+        public string ToHash(string pw)
+        {
+            byte[] b = Encoding.ASCII.GetBytes(pw);
+            string encrypted = Convert.ToBase64String(b);
+            return encrypted;
+        }
+
+        private void CreateUser(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(CreateUserPage), null);
+        }       
     }
 }
