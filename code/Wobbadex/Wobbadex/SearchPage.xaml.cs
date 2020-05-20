@@ -26,7 +26,7 @@ namespace Wobbadex
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class PokemonPage : Page
+    public sealed partial class SearchPage : Page
     {       
         //Connection string using Window Authentication
         private readonly string connectionString =
@@ -37,7 +37,7 @@ namespace Wobbadex
         private string searchParameter;
 
         //page constructor
-        public PokemonPage()
+        public SearchPage()
         {
             this.InitializeComponent();            
         }       
@@ -62,6 +62,7 @@ namespace Wobbadex
                     searchDropDown.Content = "Legendary";                    
                     break;
                 default:
+
                     break;
             }
         }

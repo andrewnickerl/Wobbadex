@@ -143,8 +143,8 @@
     <Compile Include="TeamEditorPages\TeamTwo.xaml.cs">
       <DependentUpon>TeamTwo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PokemonPage.xaml.cs">
-      <DependentUpon>PokemonPage.xaml</DependentUpon>
+    <Compile Include="SearchPage.xaml.cs">
+      <DependentUpon>SearchPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -257,7 +257,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PokemonPage.xaml">
+    <Page Include="SearchPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
