@@ -18,6 +18,7 @@ using Windows.UI.Xaml.Navigation;
 using Microsoft.Toolkit.Uwp.UI.Controls;
 using WobbadexClassLibrary;
 using System.Data;
+using AppStudio.Uwp;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -30,7 +31,7 @@ namespace Wobbadex
     {       
         //Connection string using Window Authentication
         private readonly string connectionString =
-        @"Server = DESKTOP-QA4COAS\SQLEXPRESS; Database = Wobbadex; Trusted_Connection = True";
+            @"Server = DESKTOP-QA4COAS\SQLEXPRESS; Database = Wobbadex; Trusted_Connection = True";
         //determines what data is pulled from the database table
         private string query = "SELECT * FROM pokemon";
         private string whereClause;
@@ -40,7 +41,7 @@ namespace Wobbadex
         public SearchPage()
         {
             this.InitializeComponent();            
-        }       
+        }
 
         private void SearchParameter_Click(object sender, RoutedEventArgs e)
         {
@@ -62,7 +63,6 @@ namespace Wobbadex
                     searchDropDown.Content = "Legendary";                    
                     break;
                 default:
-
                     break;
             }
         }
@@ -109,14 +109,27 @@ namespace Wobbadex
 
             DataTable pokemonTable = GetPokemon(this.connectionString, $"{this.query} {this.whereClause}");
 
-            for (int i = 0; i < pokemonTable.Columns.Count; i++)
+            PokemonGrid.Columns.Add(new DataGridTextColumn()
             {
-                PokemonGrid.Columns.Add(new DataGridTextColumn()
-                {
-                    Header = pokemonTable.Columns[i].ColumnName,
-                    Binding = new Binding { Path = new PropertyPath("[" + i.ToString() + "]") }
-                });
-            }
+                Header = "Pokedex Number",
+                Binding = new Binding { Path = new PropertyPath("[" + 0.ToString() + "]") }
+            });
+            PokemonGrid.Columns.Add(new DataGridTextColumn()
+            {
+                Header = "Name",
+                Binding = new Binding { Path = new PropertyPath("[" + 1.ToString() + "]") }
+            });
+            PokemonGrid.Columns.Add(new DataGridTextColumn()
+            {
+                Header = "Type 1",
+                Binding = new Binding { Path = new PropertyPath("[" + 3.ToString() + "]") }
+            });
+            PokemonGrid.Columns.Add(new DataGridTextColumn()
+            {
+                Header = "Type 2",
+                Binding = new Binding { Path = new PropertyPath("[" + 4.ToString() + "]") }
+            });
+
             var pokemonCollection = new ObservableCollection<object>();
             foreach (DataRow row in pokemonTable.Rows)
             {
@@ -140,6 +153,30 @@ namespace Wobbadex
                 }                
                 return pokemonTable;
             }
-        }        
+        }
+
+        //private void PokemonGrid_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        //{
+        //    DataGridRow selection = (DataGridRow)((DataGrid)sender).SelectedItem;
+        //    DataGridCell numCell = selection.FindChildOfType<DataGridCell>();
+        //    int pokedexNumber = (int)numCell.Content;            
+        //    using (var connection = new SqlConnection(connectionString))
+        //    {
+        //        connection.Open();
+        //        var command = connection.CreateCommand();
+        //        command.CommandText = $"GET * FROM pokemon WHERE pokedex_number = {pokedexNumber}";
+        //        DataTable pokemonTable = new DataTable();
+        //        using (var dataAdapter = new SqlDataAdapter(command))
+        //        {
+        //            dataAdapter.Fill(pokemonTable);
+        //        }
+        //        foreach (DataRow row in pokemonTable.Rows)
+        //        {
+        //            this.pokemon.PokedexNumber = (int)row[0];
+        //            this.pokemon.Name = (string)row[1];
+        //        }
+        //    }
+        //    this.Frame.Navigate(typeof(PokemonPage), null);
+        //}
     }
 }

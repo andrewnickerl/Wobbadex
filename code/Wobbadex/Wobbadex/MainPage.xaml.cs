@@ -41,7 +41,7 @@ namespace Wobbadex
 
                 if (user.PwHash == ToHash(pwBox.Password))
                 {
-                    this.Frame.Navigate(typeof(PokemonPage), null);
+                    this.Frame.Navigate(typeof(SearchPage), null);
                 }
                 else
                 {

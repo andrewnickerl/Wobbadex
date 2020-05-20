@@ -36,7 +36,8 @@
             <controls:DataGrid x:Name="PokemonGrid"                
                 Height="800"
                 AutoGenerateColumns="False" 
-                RelativePanel.Below="searchTextBox"/>
+                RelativePanel.Below="searchTextBox"
+                DoubleTapped="PokemonGrid_DoubleTapped"/>
         </RelativePanel>
     </Grid>
 </Page>
